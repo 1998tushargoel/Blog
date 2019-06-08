@@ -16,10 +16,19 @@ var blogSchema = new mongoose.Schema({
     body: String,
     created: {type: Date, default: Date.now}
 });
-var Blog = mongoose.model("Blog", BlogSchema);
+var Blog = mongoose.model("Blog", blogSchema);
 
+// Blog.create({
+//     title: "Test Blog",
+//     image: "https://images.freeimages.com/images/small-previews/3d3/droplets-1395002.jpg",
+//     body: "HELLO THIS IS A BLOG POST!"
+// });
 
 // RESTFUL ROUTES
+
+app.get("/blogs", function(req, res){
+    res.render("index");
+});
 
 
 app.listen(3000, function(){
